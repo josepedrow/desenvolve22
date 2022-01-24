@@ -1,0 +1,35 @@
+<meta charset="UTF-8";>
+
+<canvas width="600" height="400"></canvas>  <!--dimensões do canvas-->
+
+<script>
+
+    var tela = document.querySelector("canvas"); //pegar o elemento canvas
+    var pincel = tela.getContext("2d");
+
+    //Cabeça
+    pincel.fillStyle = "darkgreen"; //retângulo maior verde
+    pincel.fillRect(0,0,350,300);
+
+    //Olho esquerdo
+    pincel.fillStyle = "black"; //retângulo maior verde
+    pincel.fillRect(50,70,90,90);
+
+    //Olho direito
+    pincel.fillStyle = "black"; //retângulo maior verde
+    pincel.fillRect(210,70,90,90);
+
+    //nariz
+    pincel.fillStyle = "black"; //retângulo maior verde
+    pincel.fillRect(140,160,70,100);
+
+    //boca_parte1
+    pincel.fillStyle = "black"; //retângulo maior verde
+    pincel.fillRect(100,190,40,110);
+
+    //boca_parte2
+    pincel.fillStyle = "black"; //retângulo maior verde
+    pincel.fillRect(210,190,40,110);
+
+
+</script>

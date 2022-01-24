@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+<input/>
+<button>Escreva a fração e clique aqui</button>
+<canvas width=600 height=400></canvas>
+<script>
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext('2d');
+
+    function comparaResposta(){
+        var resposta = document.querySelector("input");
+        console.log(resposta.value);
+        
+        
+        if (resposta.value == "3/4"){
+            alert("Você acertou!");
+
+        } else {
+            alert ("A fração era 3/4");
+        }
+
+    }
+
+    function desenhaQuadradoPintado(posX,posY,tamanho,cor) {
+        
+        
+        pincel.fillStyle = cor;
+        pincel.fillRect (posX,posY,tamanho,tamanho);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(posX,posY,tamanho,tamanho);
+
+    }
+
+    //var numerador = prompt("Informe o numerador");
+    //var denominador = prompt ("Informe o denominador");
+    var numerador = 3;
+    var denominador = 4;
+    var x = 0; //posição inicial em x
+    var y = 0; //posição inicial em y
+
+    //escrever texto
+    pincel.font='20px Georgia';
+    pincel.fillStyle='black';
+    pincel.fillText("Qual é a fração?", 50, 80); //str,x,y
+    
+    
+    //preenche o denominador
+    for (var j = 0; j <denominador; j=j+1){
+        desenhaQuadradoPintado(x,y,50,"white");
+        x=x+50;
+        //console.log(x);
+    }
+
+   
+    var x = 0; //posição inicial em x
+    var y = 0; //posição inicial em y
+    //preenche o numerador
+    for (var j = 0; j <numerador; j=j+1){
+        desenhaQuadradoPintado(x,y,50,"gold");
+        x=x+50;
+        //console.log(x);
+
+    }
+
+    
+    
+    var botao = document.querySelector("button");
+    botao.onclick=comparaResposta;
+
+
+</script>
