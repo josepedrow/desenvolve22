@@ -1,0 +1,78 @@
+<meta charset="UTF-8">
+
+<input/> <!--Para entrada de dados-->
+
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    function verificar(){
+        var achou = false;
+        for (i=0;i < segredos.length;i++){
+
+            if (input.value == segredos[i]){
+                alert("Você acertou!");
+                achou = true;
+                break;
+            } 
+        }
+        if (achou == false){
+            alert("Você errou!");
+        }
+        
+        input.value=""; //limpar o campo após a tentaiva;
+        input.focus();
+        
+        
+    }
+
+    function sorteia(){
+
+        return Math.round(Math.random()*10);
+    }
+
+    function sorteiaNumeros (quantidade){
+        var segredos = [];
+        var contador=1;
+        
+
+        while (contador <= quantidade){
+
+            var numeroAleatorio = sorteia();
+            var achou = false;
+
+            for (var posicao = 0; posicao < segredos.length; posicao++){
+
+                if (segredos[posicao] == numeroAleatorio){
+                    achou = true;
+                    break;
+                }
+            }
+            if (achou == false && numeroAleatorio!==0) {
+                segredos.push(numeroAleatorio);
+                contador++;
+
+            }
+        }
+        return segredos;
+    }
+
+    
+    
+
+   
+    var segredos = sorteiaNumeros(6);
+    console.log(segredos);
+    var input = document.querySelector("input");
+    input.focus();
+    var button = document.querySelector("button");
+    button.onclick  = verificar; //atenção que a função fica sem () pq ao clicar ele puxará o código da função
+
+    //alert(input.value);
+
+
+      
+    
+        
+    
+</script>

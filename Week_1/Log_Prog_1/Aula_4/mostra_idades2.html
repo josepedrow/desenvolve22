@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha() {
+    document.write("<br>");
+    document.write("<hr>"); //tag para separar resultado (cria uma linha)
+    document.write("<br>");
+    //document.write("<br><hr><br>"); //pode declarar na mesma linha
+}
+
+ function mostra (texto) {
+    document.write("<big>"+ texto +"</big>"); // <big> </big> destaca o texto
+    //document.write(texto);
+    pulaLinha();
+}
+
+var ano = 2022;
+mostra("Eu nasci em : " + (ano - 29));
+mostra("Adriano nasceu em : " + (ano - 26));
+mostra("Paulo nasceu em : " + (ano - 32));
+
+</script>

@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(texto) {
+        document.write(texto);
+        pulaLinha();
+    }
+
+    var anoAtual = 2022;
+    var anoDescobrimento = 1500;
+    var idadeMediaQuandoTemFilhos = 28;
+    var numeroAnos = (anoAtual-anoDescobrimento);
+
+    mostra("Passaram-se " + (numeroAnos) + " anos.");
+    mostra("Isso equivale a aproximadamente " + Math.round(numeroAnos/idadeMediaQuandoTemFilhos) + " gerações.");
+
+       
+
+</script>

@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<input/> <!--Para entrada de dados-->
+
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    function verificar(){
+        var achou = false;
+        for (i=0;i < segredos.length;i++){
+
+            if (input.value == segredos[i]){
+                alert("Você acertou!");
+                achou = true;
+                break;
+            } 
+        }
+        if (achou == false){
+            alert("Você errou!");
+        }
+        
+        input.value=""; //limpar o campo após a tentaiva;
+        input.focus();
+        
+        
+    }
+
+    var segredos = [5,7,10,2];
+    console.log(segredos);
+    var input = document.querySelector("input");
+    input.focus();
+    var button = document.querySelector("button");
+    button.onclick  = verificar; //atenção que a função fica sem () pq ao clicar ele puxará o código da função
+
+    //alert(input.value);
+
+
+      
+    
+        
+    
+</script>

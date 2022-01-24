@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var primeiroNumero = parseInt(prompt("Informe um número inteiro."));
+    var numero =primeiroNumero;
+    var ultimoNnumero =parseInt(prompt("Informe um número inteiro maior que o anterior."));
+    var quantidadeNumeroPar = 0;
+    mostra("Os números pares entre " +numero+ " e " + ultimoNnumero + " são:");
+    while (numero <= ultimoNnumero){
+        if (numero % 2 ==0 && numero !=0){
+            mostra(numero);
+            console.log(numero);
+            //quantidadeNumeroPar=quantidadeNumeroPar+1;
+        }
+        
+        numero=numero+1;
+    }
+    mostra("<br>FIM");
+    //mostra("Há um total de  " + quantidadeNumeroPar + " números pares entre " +primeiroNumero+ " e " + ultimoNnumero);
+</script>

@@ -1,0 +1,35 @@
+
+<meta charset="UTF-8">
+<canvas width="600" height="400"></canvas>  <!--dimensões do canvas-->
+
+
+<script>
+    var tela = document.querySelector("canvas"); //pegar o elemento canvas
+    var pincel = tela.getContext("2d");
+
+  
+    pincel.fillStyle = "lightgrey"; //cor deve vir antes do fillrect
+    pincel.fillRect(0,0,600,400);
+
+    //pincel.fillStyle = "white";
+    //pincel.fillRect (200,0,200,600)
+
+    pincel.fillStyle = "green";
+    pincel.fillRect(0,0,200,400);
+
+    pincel.fillStyle = "red";
+    pincel.fillRect (400,0,200,400);
+
+    pincel.fillStyle = "yellow";
+    pincel.beginPath(); //desenhar um triangulo movendo o pincel;
+    pincel.moveTo(300,200); //posiciona o pincel
+    pincel.lineTo(200,400); // manda desenhar a linha;
+    pincel.lineTo(400,400);
+    pincel.fill(); // por fim manda preencher
+
+
+    //pincel.fillStyle = "black"; //cor deve vir antes do fillrect
+    //pincel.fillRect(150,100,300,200);
+    
+
+</script>

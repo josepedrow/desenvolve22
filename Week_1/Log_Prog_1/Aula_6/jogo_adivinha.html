@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+        //document.write("<hr>"); //tag para separar resultado (cria uma linha)
+        document.write("<br>");
+        //document.write("<br><hr><br>"); //pode declarar na mesma linha
+    }
+
+    function mostra (texto) {
+    document.write("<big>"+ texto +"</big>"); // <big> </big> destaca o texto
+    pulaLinha();
+}
+
+    var numeroPensado = Math.round(Math.random()*10);
+    console.log(numeroPensado); //imprimir a resposta no console
+    var chute = parseInt(prompt("Pensei em um número de 0 a 10. Digite seu chute!"));
+
+    if (chute == numeroPensado) {
+        mostra("Você acertou!")
+    } else {
+        mostra("Você errou! O número pensado foi: " + numeroPensado + " .");
+    }
+
+    
+</script>
+
+
+
