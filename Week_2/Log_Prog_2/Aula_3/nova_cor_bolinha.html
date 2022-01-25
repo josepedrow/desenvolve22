@@ -1,0 +1,65 @@
+<h3>Clique com o botão esquerdo sobre a tela preta para desenhar.</h3>
+<h3>Mude a cor pressionando o botão direito do mouse</h3>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = "black";
+    pincel.fillRect(0, 0, 600, 400);
+    pincel.fill();
+
+
+    var novaCor = "blue"; //inicia com azul
+
+    function desenhaCirculo(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        pincel.fillStyle = novaCor;
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+        console.log(x + ',' + y);
+        //console.log(evento);
+
+    }
+
+    function mudaCor(evento) {
+
+        var cor = ["blue", "red", "green", "white"]; //array com as cores
+
+        if (contaCliqueDireito > 3) {
+            contaCliqueDireito = 0; //retornará ao azul
+            //console.log(cor[contaCliqueDireito]);
+            novaCor = cor[contaCliqueDireito]; //altera a cor
+            contaCliqueDireito++ //incrementa variável
+
+        } else {
+
+            if (evento.button = 2) {
+                //evento.button = 2 indica clique com botão direito
+                //console.log(cor[contaCliqueDireito]);
+                novaCor = cor[contaCliqueDireito];
+                contaCliqueDireito++;
+            }
+
+        }
+
+        //console.log(evento);
+
+        return false;
+    }
+
+
+    var contaCliqueDireito = 1; //começa com o azul já selecionado
+
+    tela.onclick = desenhaCirculo; //ao clicar com botão esquerdo
+
+    tela.oncontextmenu = mudaCor; //ao clicar com o botão direito
+
+
+
+</script>

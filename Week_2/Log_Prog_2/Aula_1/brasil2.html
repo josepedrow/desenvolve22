@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+
+<button>Clique aqui!</button>
+
+<h1>Brasil, Brasil, Brasil!</h1>
+<canvas width="600" height="400"></canvas>  <!--dimensões do canvas-->
+
+
+<script>
+
+
+    function desenheBandeiraBrasil() {
+        
+        var tela = document.querySelector("canvas"); //pegar o elemento canvas
+        var pincel = tela.getContext("2d");
+        var frase = 1;
+
+        //desenhando o retângulo verde da bandeira
+        pincel.fillStyle= "green";
+        pincel.fillRect(0,0,600,400);
+
+        //desenhando o losango amarelo;
+        var lado = 35; //distância do ponto esquerdo amarelo até a margem esq.
+        var altura = 400;
+        var largura = 600;
+        
+    
+        pincel.fillStyle="yellow";
+        pincel.beginPath();
+        pincel.moveTo(lado,altura/2);
+        pincel.lineTo(largura/2,altura-lado);
+        pincel.lineTo(largura-lado,altura/2);
+        pincel.lineTo(largura/2,lado);
+        pincel.fill();
+
+     
+    
+
+        //desenhando o círculo azul;
+
+        pincel.fillStyle = "darkblue";
+        pincel.beginPath();
+        pincel.arc(largura/2,altura/2,100,0,2*3.14);
+        pincel.fill();
+
+        /*
+        //escrever texto
+        pincel.font='15px Georgia';
+        pincel.fillStyle='green';
+        pincel.fillText("ORDEM E PROGRESSO", 220, 185); //str,x,y
+        */
+
+        
+        //alerta
+        alert("Brasil, tâ nâ nâ!");
+        
+
+    }
+    
+var botao = document.querySelector("button");
+botao.onclick=desenheBandeiraBrasil;
+
+
+</script>
