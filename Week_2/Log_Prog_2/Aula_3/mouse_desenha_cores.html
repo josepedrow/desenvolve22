@@ -1,0 +1,48 @@
+<h4>Escolha uma cor <input type="color"></h4> <!--input tipo cor cria paleta-->
+<br>
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var desenha = 0; //inicia variável para n permitir desenho
+    var cor = document.querySelector('input');
+    
+    
+
+    pincel.fillStyle = 'black';
+    pincel.fillRect(0, 0, 600, 400);
+    pincel.fill();
+
+    //funções declaradas como anônimas
+    //o ruim é que não pode ser chamada várias vezes
+    tela.onmousemove = function (evento) {
+
+        if (desenha == 1) {
+
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            pincel.fillStyle = cor.value;
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    tela.onmousedown = function (evento) {
+        desenha = 1;
+    }
+
+    tela.onmouseup = function (evento) {
+        desenha = 0;
+    }
+
+
+    //tela.onmousemove = desenhaCirculo; //quando move o curso do mouse
+    //tela.onmousedown = permiteDesenhar; //quando clica
+    //tela.onmouseup = naoPermiteDesenhar; //quando solta
+
+
+
+</script>

@@ -1,0 +1,51 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var desenha = 0; //inicia variável para n permitir desenho
+
+
+    pincel.fillStyle = 'black';
+    pincel.fillRect(0, 0, 600, 400);
+    pincel.fill();
+
+
+    function desenhaCirculo(evento) {
+
+        if (desenha == 1) {
+
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            //console.log(x, y);
+            pincel.fillStyle = 'red';
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+            console.log(x + ',' + y);
+
+        }
+
+
+
+    }
+
+
+
+    function permiteDesenhar(evento) {
+        desenha = 1;
+    }
+
+    function naoPermiteDesenhar(evento) {
+        desenha = 0;
+    }
+
+    //tela.onclick = desenhaCirculo;
+    tela.onmousemove = desenhaCirculo; //quando move o curso do mouse
+    tela.onmousedown = permiteDesenhar; //quando clica
+    tela.onmouseup = naoPermiteDesenhar; //quando solta
+
+
+
+</script>

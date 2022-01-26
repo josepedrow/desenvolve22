@@ -1,0 +1,46 @@
+<meta charset="UTF-8" ;>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector("canvas"); //pegar o elemento canvas
+    var pincel = tela.getContext("2d");
+    pincel.fillStyle = "lightgray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limparTela() {
+        pincel.clearRect(0, 0, 600, 400); //limpar tela
+    }
+
+    var x = 20; // posição inicial
+    function atualizaTela() {
+        limparTela(); //para apagar qq coisa do canvas
+        desenhaCirculo(x, 20, 10);
+        x++; // incrementa o x
+
+        //
+        console.log(x);
+        //para fazer retornar quando chegar no final do canvas
+        if (x >= 600) {
+            x = 0;
+        }
+
+    }
+
+ 
+    // como fazer ele parar?
+    setInterval(atualizaTela, 10); //para chamar continuamente de acordo com tempo
+    
+
+
+
+
+</script>
