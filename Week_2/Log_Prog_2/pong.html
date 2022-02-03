@@ -1,0 +1,152 @@
+<meta charset="UTF-8" ;>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var contador = 0;
+    var tela = document.querySelector("canvas"); //pegar o elemento canvas
+    var pincel = tela.getContext("2d");
+    pincel.fillStyle = "lightgray";
+    pincel.fillRect(0, 0, 600, 400);
+    var contador = 0;
+    var largura = 15;
+    var x = 20;
+    var y = 30;
+    var xComida = 100;
+    var yComida = 100;
+    var yQueda = -1000;
+
+    // códigos do teclado
+
+    var esquerda = 37;
+    var cima = 38;
+    var direita = 39;
+    var baixo = 40;
+    var teclaPressionada = direita;
+
+    
+    
+
+    function desenhaCirculo(x, y, raio) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function desenhaQuadrado(x,y,largura){
+        pincel.fillStyle = "black";
+        pincel.fillRect(x,y,largura,15);
+        pincel.fill();
+    }
+
+    function limparTela() {
+        pincel.clearRect(0, 0, 600, 400); //limpar tela
+    }
+
+    function desenhaBorda(){
+        pincel.strokeStyle ="black";
+        pincel.strokeRect (0,0,600,400);
+    }
+  
+    function atualizaTela(evento) {
+        //limparTela(); //para apagar qq coisa do canvas
+        comeuOuNao ();
+        apareceComida();
+        desenhaQuadrado(x,y,largura);
+        desenhaBorda();
+        contador++;
+        //console.log(x + ' ,' + y);
+        if (teclaPressionada == direita){
+            console.log(teclaPressionada);
+            x++;
+        }
+
+        if (teclaPressionada == esquerda){
+            console.log(teclaPressionada);
+            x--;
+        }
+
+        if (teclaPressionada == cima){
+            console.log(teclaPressionada);
+           y--
+        }
+
+        if (teclaPressionada == baixo){
+            console.log(teclaPressionada);
+            y++
+        }
+        
+        //para fazer retornar quando chegar no final do canvas
+        if (x > 600) {
+            x = 0;
+        }
+
+        if (y < 0){
+            y = 400;
+        }
+
+        if (y > 400) {
+            y = 0;
+        }
+
+        if (x < 0) {
+            x = 600;
+        }
+    }
+
+    function leDoTeclado(evento){
+
+        teclaPressionada = evento.keyCode;
+        if (teclaPressionada == direita){
+            //console.log(teclaPressionada);
+            x++;
+        }
+        if (evento.keyCode == esquerda){
+            teclaPressionada = esquerda;
+            //console.log(teclaPressionada);
+            //x--;
+        }
+        if (evento.keyCode == cima){
+            teclaPressionada = cima;
+            //console.log(teclaPressionada);
+            //y++;
+        }
+        if (evento.keyCode == baixo){
+            teclaPressionada = baixo;
+            //console.log(teclaPressionada);
+            //y--;
+        }
+
+    }
+
+    function apareceComida() {
+
+        //tentando implementar o jogo estilo "pong"
+        desenhaQuadrado(100,yQueda,40);
+        if (yQueda >= 400){
+            yQueda=-1000;
+            console.log(yQueda);
+        }else{
+            yQueda = yQueda+1;
+            console.log(yQueda);
+        }
+
+
+    }
+
+    function comeuOuNao(){
+
+        if (x == xComida && y == yComida) {
+            largura=largura+15;
+        }else{
+            limparTela();
+        }        
+        
+    }
+    document.onkeydown = leDoTeclado;
+
+    // como fazer ele parar?
+    var paraContinua = setInterval(atualizaTela, 5); //para chamar continuamente de acordo com tempo
+    setInterval(apareceComida,9000);
+</script>
