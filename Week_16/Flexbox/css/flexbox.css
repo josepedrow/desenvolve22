@@ -1,0 +1,170 @@
+/*
+Tentando posicionar Logo e menu nav
+um ao lado do outro via display inline.
+Dar um margin-left na nav e ir chutando o valor...
+não eh a melhor forma...
+.cabecalhoPrincipal-titulo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cabecalhoPrincipal-nav {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 600px;
+}
+*/
+
+
+/*agora tentaremos com o float
+o conteúdo de baixo subiu...
+inline pior ainda pq n permite width e height
+.cabecalhoPrincipal-titulo {
+    
+}
+
+.cabecalhoPrincipal-nav {
+    float: right;
+}
+
+*/
+
+
+/*HEADER*/
+
+.cabecalhoPrincipal .container {
+    display: flex;
+    /*já posiciona os filhos do container um ao lado do outro*/
+    align-items: center;
+    /*alinhou ao centro*/
+    justify-content: space-between;
+    /*para colocar o espaço vazio entre os elementos*/
+}
+
+.cabecalhoPrincipal-nav {
+    display: flex;
+    /*deixar os itens do nav alinhados lado a lado*/
+    /*eles ficam colados. para dar um espaçamento entre eles add margin nos links
+    isso foi feito no arquivo do estilo do css. margin: 0 0 0 10px;*/
+}
+
+
+/*FOOTER*/
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+    /*mexe no eixo principal (horizontal), enquanto o align-itens no (verticaL) isso quanto está em ROW. Column inverte*/
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*ao invés de between, isso faz com q o espaço seja distribuido ao redor de cada elemento*/
+    width: 70%;
+    /*assim ele terá maior espaço e poderá usar o space-betweenn para separar logos*/
+    margin-right: 5%;
+    /*ao invés de 75 no width, deixa 70 e joga uma margem right aqui para n colar o ultimo logo no form*/
+}
+
+.rodapePrincipal-contatoForm {
+    width: 25%;
+    /*somados com 70% fecha a largura da página*/
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex;
+    /*filhos passam a ter o mesmo tamanho, input e botão*/
+    margin-right: 5%;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    /*por padrão ele espalha em linhas, distribui, rows*/
+    /* flex-direction: column; /*nesse caso, queremos as listas dos cursos em colunas, por isso mudamos a direção
+    /*flex-wrap: wrap; */
+    /*para fazer quebras quando não cabe no elemento pai*/
+    flex-flow: column wrap;
+    /*agrupo o flex-direction e flex-wrap numa linha apenas*/
+    height: 255px;
+    /*definida a altura das caixas de conteudo do elemento pai*/
+}
+
+
+/* MENU */
+
+.conteudoPrincipal-cursos {
+    display: flex;
+    /*está no padrão row o direction*/
+    flex-wrap: wrap;
+    /*quebra em linhas quando chega na largura da página*/
+    /* justify-content:flex-start; */
+}
+
+.conteudoPrincipal-cursos-link {
+    width: 23%;
+    /*definido um tamanho de 20% para os elementos do li que indicam cada linguagem de programação*/
+    margin: 1%;
+}
+
+.conteudoPrincipal-cursos-link:nth-child(4n) {
+    margin-right: 0;
+    /*retira margem direita dos múltiplos de 4, ou seja,
+    os elementos localizados na extrema direita*/
+}
+
+.conteudoPrincipal-cursos-link:nth-child(4n+1) {
+    margin-left: 0;
+    /*retira margem esquerda dos múltiplos de 4 +1, ou seja,
+    os elementos localizados na extrema esquerda*/
+}
+
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+    /*SÓ VAI PEGAR ESSE CÓDIGO SE A TELA FOR ATÉ 768px
+    SE N, VOLTA AO LAYOUT NORMAL*/
+    /*ao usar flex, mudar o que foi row para column, em função da inversão dos eixos*/
+    .cabecalhoPrincipal-nav {
+        flex-direction: column;
+    }
+    .cabecalhoPrincipal .container {
+        flex-direction: column;
+        align-items: initial;
+        /*remover o align center pq como está em column, o eixo está trocado.s*/
+        text-align: center;
+        /*alinhar apenas o texto ao centro*/
+    }
+    .conteudoPrincipal-cursos {
+        flex-direction: column;
+    }
+    .conteudoPrincipal-cursos-link {
+        width: 100%;
+        /*para os cursos ficarem em toda extensão*/
+    }
+    .rodapePrincipal-navMap-list {
+        height: auto;
+        /*não deixar fixo com os 255 para n quebrar para o lado*/
+    }
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .rodapePrincipal-contatoForm,
+    .rodapePrincipal-patrocinadores-list {
+        /*deixar a lista de patrocinadores e o tamanho do input enviar
+    ocupando 100%, não mais 70 e 25% como na web*/
+        width: 100%;
+    }
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+    .cabecalhoPrincipal-nav-link-app {
+        order: -1;
+        /*alinhar os itens, eles tem order 0. Para fazer um subir, 
+        dar uma classe especial e colocar ordem <0. Assim esse item ficará por 
+        primeiro no menu de nav no modo responsivo...*/
+    }
+}
