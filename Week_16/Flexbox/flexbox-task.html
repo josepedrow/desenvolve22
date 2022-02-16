@@ -71,10 +71,13 @@
 
     .flexItem {
         flex-grow: 1; /*como tem 4 divs, cada 1 recebe uma parte*/
+        flex-shrink: 1; /*para redução do tamanho do elemento*/
     }
 
     .primeiro {
         flex-grow: 2; /*vai dividir em 5 (3*1 + 2) a primeira div pegará dois*/
+        flex-shrink: 2; /*irá reduzir 2x mais que os demais...*/
     }
+
 
 </style>
