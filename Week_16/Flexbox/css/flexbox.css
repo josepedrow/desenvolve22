@@ -120,7 +120,27 @@ inline pior ainda pq n permite width e height
     os elementos localizados na extrema esquerda*/
 }
 
+.videoSobre .container {
+    display: flex;
+    
+}
 
+.videoSobre-sobre{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2; /*para fazer que os itens aumentem, ocupem o espaço todo disponível*/
+   
+}
+
+.videoSobre-sobre-list{
+    flex-grow: 1; /*permite que o botão fique na parte debaixo, pq a lista ocupa todo o espaço*/
+}
+
+.videoSobre-video{
+    flex-grow: 1; /*divide o espaço com o video tb, faz com q o video aumente se vc subir esse valor*/
+    flex-shrink: 2; /*reduzir o video para reduzir 2x mais q os outros itens o tamanho conforme a tela fica menor*/
+}
 /* MOBILE */
 
 @media(max-width: 768px) {
@@ -166,5 +186,14 @@ inline pior ainda pq n permite width e height
         /*alinhar os itens, eles tem order 0. Para fazer um subir, 
         dar uma classe especial e colocar ordem <0. Assim esse item ficará por 
         primeiro no menu de nav no modo responsivo...*/
+    }
+
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+    .videoSobre-video{
+        margin: 0 auto;
     }
 }
