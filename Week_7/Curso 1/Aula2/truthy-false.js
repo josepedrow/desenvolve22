@@ -15,6 +15,7 @@
 
 
 //null ===> vazio ou nada
+console.time();
 
 let minhaVar; //undefined
 let varNull = null; //"erro do JS pq null é um objeto"
@@ -30,3 +31,6 @@ console.log(typeof(texto));
 
 console.log(typeof(minhaVar));
 console.log(typeof(varNull));
+
+
+console.timeEnd();
