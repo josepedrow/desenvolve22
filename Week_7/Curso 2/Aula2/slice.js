@@ -30,5 +30,12 @@ const notas = [1,2,3,4,5,6,7,8,9,10];
 //notas.splice(0,2,1000);
 
 //pode utilizar não apenas para remover, mas para add entre valores
-notas.splice (3,0, 1000);
-console.log(notas);
+// notas.splice (3,0, 1000);
+// console.log(notas);
+
+animaisDoAquario = ['🐋', '🐙', '🐬', '🦈']
+
+animaisDoAquario.splice(1,0,'🐠')
+animaisDoAquario.splice(3,2,'🐟')
+
+console.log(animaisDoAquario)
