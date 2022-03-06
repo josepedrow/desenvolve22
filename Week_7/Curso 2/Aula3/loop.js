@@ -21,3 +21,5 @@ const exibeNomeNota = (nomeDoAluno) => {
 }
 
 console.log(exibeNomeNota("Ju"));
+
+//for
