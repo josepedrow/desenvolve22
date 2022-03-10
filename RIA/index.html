@@ -3,89 +3,71 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>RIA Pesquisa e Soluções</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <title>RIA | Pesquisa e Soluções</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <div class="caixa-header">
+    <header class="cabecalhoPrincipal">
+        <div class="container">
+            <!--LOGO-->
+            <figure class="cabecalhoPrincipal-titulo">
+                <img src="./assets/img/ria-logo.png" alt="Logo RIA" />
+            </figure>
 
-            <h1><img class="logo" src="ria-logo.png"></h1>
-            
-            <nav class="nav-header">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="produtos.html"> Serviços </a></li>
-                    <li><a href="nutrifacil.html">NutriFácil </a></li>
-                    <li><a href="contato-novo.html">Contato </a></li>
-                </ul>
+            <nav class="cabecalhoPrincipal-nav">
+                <!--MENU DE NAVEGAÇÃO-->
+                <a class="cabecalhoPrincipal-nav-link" href="index.html">Início</a>
+                <a class="cabecalhoPrincipal-nav-link" href="./assets/html/servicos.html">Serviços</a>
+                <a class="cabecalhoPrincipal-nav-link" href="./assets/html/nutrifacil.html">NutriFácil</a>
+                <a class="cabecalhoPrincipal-nav-link" href="./assets/html/contato-novo.html">Contato</a>
             </nav>
-
-
         </div>
-
 
     </header>
 
 
-    <!-- Define o box slideshow -->
-    <div id="slideshow">
-        <div class="slide-wrapper">
 
-            <!-- Define cada slide e seus conteúdos -->
-            <div class="slide">
-                <h1 class="slide-number">
-                    Consultoria
-                </h1>
-            </div>
-            <div class="slide">
-                <h1 class="slide-number">
-                    Pesquisa
-                </h1>
-            </div>
-            <div class="slide">
-                <h1 class="slide-number">
-                    Soluções
-                </h1>
-            </div>
+    <!--BANNER-->
 
-        </div>
-    </div>
+    <h1 class="banner"></h1>
+
+    <!--     
+    <h1 class="banner">  <img  src="./assets/img/banner-exp.jpg"> </h1> -->
 
 
-    <!--
-        <img class="banner" src="banner-exp.jpg"> -->
 
     <main>
 
         <section class="principal">
 
-            <h2 class="titulo-principal"> Sobre a RIA </h2>
+            <h2 class="titulo-principal"> Sobre Nós</h2>
 
-            <p>A <strong>RIA Pesquisa e Soluções</strong> é uma empresa de consultoria
+            <p class="sobre-nos">A <strong>RIA Pesquisa e Soluções</strong> é uma empresa de consultoria
                 na área de alimentos, especializada em Assuntos Regulatórios, Mapeamento de Processos,
                 Melhoria Contínua e Qualidade. A <strong>RIA</strong> foi pensada para ajudar pequenos e médios
                 produtores/ Indústrias de Alimentos no cumprimento das exigências legais, a fim de garantir
                 a produção de alimentos seguros e de qualidade. A <strong>RIA</strong> também oferece soluções em Excel,
                 Estatística e tratamento de dados, além de planejamento de experimentos. </p>
 
-            <p id="missao"><em>Nossa missão é: <strong> "Propor soluções para as necessidades dos nossos
-                        clientes"</strong></em>
-            </p>
+
         </section>
 
         <section class="profissionais">
-            <h2 class="titulo-principal">Profissionais</h2>
+            <h2 class="titulo-principal">Consultores</h2>
 
             <div class="conteudo-profisisonais-jose">
                 <h3 class="profissional-jose">José Pedro Wojeicchowski</h3>
                 <ul><a href="https://www.linkedin.com/in/josepw/" target="_blank"><img class="imagem-jose"
-                            src="jose-normal.png" onmouseover="this.src='jose-jaleco2.png';"
-                            onmouseout="this.src='jose-normal.png';"></a>
+                            src="./assets/img/jose-normal.png" onmouseover="this.src='./assets/img/jose-jaleco2.png';"
+                            onmouseout="this.src='./assets/img/jose-normal.png';"></a>
                     <li class="itens">Engenheiro de Alimentos</li>
                     <li class="itens">Mestre em Ciência e Tecnologia de Alimentos</li>
                     <li class="itens">Doutorando em Engenharia de Alimentos/Química</li>
@@ -96,12 +78,13 @@
             <div class="conteudo-profisisonais-amanda">
                 <h3 class="profissional-amanda">Amanda Tais da Cunha</h3>
                 <ul><a href="https://www.linkedin.com/in/amanda-cunha-38480281/" target="_blank"><img
-                            class="imagem-fisico" src="amanda.png" onmouseover="this.src='amanda.png';"
-                            onmouseout="this.src='amanda.png';"></a>
+                            class="imagem-amanda" src="./assets/img/amanda.png"
+                            onmouseover="this.src='./assets/img/amanda.png';"
+                            onmouseout="this.src='./assets/img/amanda.png';"></a>
                     <li class="itens">Engenheira de Alimentos</li>
                     <li class="itens">Tecnóloga em Gestão de RH</li>
                     <li class="itens">Especialista em Qualidade</li>
-                    <li class="itens">Especialista em Lean six-sigma</li>
+                    <li class="itens">Especialista em Lean Six-Sigma</li>
                 </ul>
             </div>
 
@@ -121,18 +104,25 @@
 
     <footer>
 
-        <img class="div-logo" src="logo-branco.png">
-        <!--
+        <img class="div-logo" src="./assets/img/logo-branco.png">
+
+        <!-- Lista com os ícones e href para redirecionamento -->
+
         <nav class="nav-footer">
             <ul class="ul-footer">
+                <li> <a href="https://wa.me/5542999119557" target="_blank"><img class="img-footer"
+                            src="assets/img/whats.png"></a></li>
                 <li> <a href="https://www.youtube.com/channel/UClt4H9UnhHlKuvUD1aun6TQ" target="_blank"><img
-                            class="img-footer" src="youtube.png"> </a></li>
+                            class="img-footer" src="assets/img/youtube.png"> </a></li>
                 <li> <a href="https://www.linkedin.com/in/josepw/" target="_blank"><img class="img-footer"
-                            src="linkedin.png"></a></li>
+                            src="assets/img/linkedin.png"></a></li>
                 <li> <a href="https://github.com/josepedrow" target="_blank"><img class="img-footer"
-                            src="github.png"></a></li>
+                            src="assets/img/github.png"></a></li>
+
+                <li> <a href="https://orcid.org/0000-0002-6790-8510" target="_blank"><img class="img-footer"
+                            src="assets/img/orcid.png"></a></li>
             </ul>
-        </nav>-->
+        </nav>
         <p class="copyright">&copy;Copyright - RIA Pesquisa e Soluções - 2022</p>
     </footer>
 
