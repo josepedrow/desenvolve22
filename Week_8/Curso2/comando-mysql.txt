@@ -1,0 +1,6 @@
+acessar via cmd c:\Program Files\MySQL\MySQL Server 8.0\bin
+
+
+mysql -h localhost -u root -p
+
+para selecionar o DB : use nome-do-db
