@@ -29,11 +29,3 @@ ju.depositarPoup(30);
 
 console.log(ju.saldoPoup);
 
-console.log(andre.hasOwnProperty("saldoPoup"))
-console.log(ju.hasOwnProperty("saldoPoup"))
-console.log(andre instanceof Cliente)
-console.log(typeof andre)
-console.log(typeof ju)
-console.log(ju instanceof ClientePoupanca)
-console.log(Function.prototype.isPrototypeOf(Cliente))
-console.log(Cliente.constructor === Function)
