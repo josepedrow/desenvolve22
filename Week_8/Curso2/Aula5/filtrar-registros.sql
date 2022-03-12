@@ -15,5 +15,4 @@ select *from tbproduto;
 
 update tbproduto SET SABOR = "Melancia" where SABOR = "Melância"; /*Corrige a escrita de melancia*/
 
-
 select *from tbproduto where EMBALAGEM = "PET" && SABOR != "Cítricos";

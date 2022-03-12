@@ -14,4 +14,4 @@ select * from tbcliente where NOME >= "Fernando Cavalcante" ; /*ordena pela orde
 
 select * from tbproduto;
 
-select * from tbproduto where PRECO_LISTA = 16.008;
+select * from tbproduto where PRECO_LISTA = 16.008; /*difícil pegar o valor usando o = quando é ponto flutuante, então usar > ou <*/
