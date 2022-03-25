@@ -21,6 +21,8 @@ module.exports = app => {
         Atendimento.buscaPorId(id, res)
     })
 
+
+
     //cliente enviando algo
     app.post("/atendimentos", (req, res) => {
         // console.log(req.body)
